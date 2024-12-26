@@ -1,0 +1,20 @@
+.container {
+    margin: var(--padding-container);
+    position: sticky;
+    top: var(--padding-container);
+    border: 1px solid var(--color-black);
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    color: var(--color-black);
+    font-size: 1rem;
+}
+
+.icon {
+    border-right: 1px solid var(--color-black);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
