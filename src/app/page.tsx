@@ -1,6 +1,5 @@
 import styles from "./page.module.css";
 import { Banner } from "./_sections/banner";
-import { Typography } from "@/components/elements/typography";
 import { Introduction } from "./_sections/introduction";
 import { ListProducts } from "./_sections/listProducts";
 import { HighlightKeyword } from "./_sections/highlightKeyword";

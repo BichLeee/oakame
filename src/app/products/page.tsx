@@ -1,9 +1,9 @@
 import classNames from "classnames";
 
-import styles from "./products.module.scss";
+import s from "./products.module.scss";
 
 function Products() {
-    return <h1>products</h1>;
+    return <h1 className={classNames(s.container)}>products</h1>;
 }
 
 export default Products;

@@ -1,6 +1,5 @@
 import { Typography, Flex, Row, Col, ImageWrapper } from "components/elements";
 import s from "./introduction.module.scss";
-import Image from "next/image";
 
 import OakTree from "assets/images/oak-tree.png";
 import ChairsImage from "assets/images/chairs.png";
