@@ -15,7 +15,7 @@ type RowProps = {
         | "space-around"
         | "space-evenly";
     gutter?: [number, number];
-    wrap?: "wrap" | "unwrap" | "wrap-reverse";
+    wrap?: React.CSSProperties["flexWrap"];
 };
 
 type ColProps = {
