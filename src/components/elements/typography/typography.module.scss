@@ -1,0 +1,57 @@
+.oakame-h1 {
+    color: var(--color-black);
+    font-size: 6rem;
+    line-height: 110%;
+    text-transform: uppercase;
+}
+
+.oakame-h4 {
+    color: var(--color-black);
+    font-size: 2rem;
+    line-height: 110%;
+    text-transform: uppercase;
+}
+
+.oakame-h5 {
+    color: var(--color-black);
+    font-size: 1.6rem;
+    line-height: 150%;
+    text-transform: uppercase;
+}
+
+.oakame-h6 {
+    color: var(--color-black);
+    font-size: 1.2rem;
+    line-height: 150%;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.oakame-h7 {
+    color: var(--color-black);
+    font-size: 1.2rem;
+    line-height: 110%;
+    font-weight: 500;
+}
+
+.oakame-hero-text {
+    color: var(--color-black);
+    font-size: 12rem;
+    line-height: 110%;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-left: -0.6rem;
+}
+
+//font weight
+.fw-regular {
+    font-weight: 400;
+}
+
+.fw-medium {
+    font-weight: 500;
+}
+
+.fw-bold {
+    font-weight: 700;
+}

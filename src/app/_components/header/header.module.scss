@@ -1,20 +1,71 @@
-.container {
-    margin: var(--padding-container);
-    position: sticky;
+.wrapper {
+    padding-inline: var(--padding-container);
+    position: fixed;
     top: var(--padding-container);
-    border: 1px solid var(--color-black);
-    height: 40px;
-    display: flex;
-    align-items: center;
-    font-weight: 700;
-    color: var(--color-black);
-    font-size: 1rem;
+    width: 100%;
+    z-index: 2;
+    background-color: var(--color-white);
 }
 
-.icon {
+.container {
+    border: 1px solid var(--color-black);
+    height: 4.5rem;
+    width: 100%;
+    font-weight: 700;
+    color: var(--color-black);
+    font-size: 1.2rem;
+    display: grid;
+    grid-template-columns: 2fr 5fr 17fr;
+}
+
+.iconWrapper {
     border-right: 1px solid var(--color-black);
     height: 100%;
     display: flex;
     align-items: center;
-    padding: 15px;
+    justify-content: center;
+}
+
+.icon {
+    max-width: 6.5rem;
+}
+
+.iconMobile {
+    display: none;
+}
+
+.menuMobile {
+    visibility: hidden;
+}
+
+@media (max-width: 768px) {
+    .icon,
+    .buttonGroup {
+        display: none !important;
+    }
+    .iconMobile {
+        display: block;
+    }
+    .menuMobile {
+        visibility: visible;
+    }
+    .dropdownWrapper {
+        grid-column: 2 / span 2;
+        display: flex;
+    }
+}
+
+.buttonGroup {
+    display: flex;
+    justify-content: right;
+}
+
+.borderLeft {
+    border: none;
+    border-left: 1px solid var(--color-black);
+}
+
+.borderRight {
+    border: none;
+    border-right: 1px solid var(--color-black);
 }

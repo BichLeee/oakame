@@ -22,7 +22,8 @@
         "paths": {
             "@/app/*": ["app/*"],
             "@/components/*": ["components/*"],
-            "@/modules/*": ["modules/*"]
+            "@/assets/*": ["assets/*"],
+            "@/utils/*": ["utils/*"]
         }
     },
     "include": [

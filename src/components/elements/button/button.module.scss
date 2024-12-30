@@ -1,18 +1,19 @@
 .boxContainer {
-    width: 150px;
     height: 100%;
     perspective: 1000px;
     overflow: hidden;
     color: var(--color-black);
-    border: 1px solid var(--color-black);
+    border: 0.8px solid var(--color-black);
     text-transform: uppercase;
-    font-size: 1.2rem;
-    font-weight: 900;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 800;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     background-color: var(--color-white);
+    padding-inline: 20px;
 
     &:hover {
         background-position: 100% 100%;
@@ -21,30 +22,28 @@
             opacity: 1;
             transform: translate3d(0px, 0px, 0px) rotate3d(1, 0, 0, 0deg);
         }
-        .front {
+        .frontText {
             opacity: 0;
             transform: translate3d(0px, -15px, 0px) rotate3d(1, 0, 0, 90deg);
+        }
+        .bottomText {
+            opacity: 1;
+            transform: translate3d(0px, 0px, 0px) rotate3d(1, 0, 0, 0deg);
         }
     }
 }
 
-.front {
+.frontText {
     opacity: 1;
     transition:
         transform 0.6s var(--ease-out),
         opacity 0.45s var(--ease-out);
     color: var(--color-black);
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .bottom {
-    color: var(--color-white);
     position: absolute;
-    transform: translate3d(0px, 20px, 20px) rotate3d(1, 0, 0, -90deg);
+    transform: translate3d(0px, 70%, 0px) rotate3d(1, 0, 0, -90deg);
     opacity: 1;
     transition:
         transform 0.6s var(--ease-out),
@@ -55,4 +54,34 @@
     align-items: center;
     justify-content: center;
     background-color: var(--color-black);
+    width: 110%;
+}
+
+.bottomText {
+    color: var(--color-white);
+    opacity: 0;
+    transition:
+        transform 0.6s var(--ease-out),
+        opacity 0.45s var(--ease-out);
+    position: absolute;
+    transform: translate3d(0px, 15px, 0px) rotate3d(1, 0, 0, -90deg);
+    z-index: 1;
+}
+
+//sizes
+.btn-size-large {
+    width: 250px;
+    height: 50px;
+}
+
+.btn-size-middle {
+    width: 220px;
+    height: 55px;
+}
+
+.btn-size-small {
+}
+
+.btn-size-auto {
+    height: 100%;
 }

@@ -1,0 +1,26 @@
+.container {
+    padding: var(--padding-container);
+    margin-block: 20px;
+}
+
+.header {
+    width: 100%;
+    text-align: right;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        width: 4px;
+        height: 4px;
+        bottom: 0px;
+        left: calc(50% - 2px);
+        z-index: 1;
+        background: var(--color-black);
+    }
+}
+
+.content {
+    height: 100vh;
+    margin-top: 4rem;
+}

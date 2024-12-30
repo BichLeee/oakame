@@ -1,0 +1,49 @@
+.container {
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+
+    &:hover {
+        .dotTopLeft,
+        .dotTopRight,
+        .dotBottomLeft,
+        .dotBottomRight {
+            background-color: var(--color-white);
+        }
+    }
+}
+
+.dotTopLeft,
+.dotTopRight,
+.dotBottomLeft,
+.dotBottomRight {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    content: "";
+    background-color: var(--color-black);
+    z-index: 1;
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    transition-duration: 0.3s;
+    transition-property: background-color;
+}
+
+.dotTopLeft {
+    top: 8px;
+    left: 8px;
+}
+
+.dotTopRight {
+    top: 8px;
+    right: 8px;
+}
+
+.dotBottomLeft {
+    bottom: 8px;
+    left: 8px;
+}
+
+.dotBottomRight {
+    bottom: 8px;
+    right: 8px;
+}

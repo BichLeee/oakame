@@ -3,23 +3,38 @@
     --color-black: #403a34;
     --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
     --ease-in: cubic-bezier(0.12, 0, 0.39, 0);
+    --size: 375;
 }
 
 @media (min-width: 768px) {
     :root {
+        --size: 768;
         --padding-container: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    :root {
+        --size: 1024;
+    }
+}
+
+@media (min-width: 1200px) {
+    :root {
+        --size: 1440;
+        --padding-container: 3rem;
     }
 }
 
 html,
 body {
     max-width: 100vw;
-    overflow-x: hidden;
     font-weight: 300;
 }
 
 html {
-    font-size: 62.5%;
+    font-size: calc((100vw / var(--size)) * 10);
+    line-height: 1.3;
 }
 
 body {

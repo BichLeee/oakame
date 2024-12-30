@@ -1,9 +1,64 @@
-import styles from "./banner.module.scss";
+import { Typography } from "@/components/elements/typography";
+import s from "./banner.module.scss";
+
+import BonaparteCanape from "assets/images/bonaparte_canape.png";
+import CamusTable from "assets/images/camus_table.png";
+import BonaparteTable from "assets/images/bonaparte_table.png";
+import Image from "next/image";
+import { Button } from "components/elements";
+import { CornerDottedDiv } from "@/components/elements/cornerDottedDiv";
+
+const items = [
+    {
+        name: "bonaparte",
+        type: "sofas",
+        image: BonaparteCanape,
+    },
+    {
+        name: "camus",
+        type: "dining tables",
+        image: CamusTable,
+    },
+    {
+        name: "bonaparte",
+        type: "coffee tables",
+        image: BonaparteTable,
+    },
+];
 
 export const Banner = () => {
     return (
-        <div className={styles.container}>
-            <div className={styles.banner}>Banner</div>
+        <div className={s.container}>
+            <div className={s.banner}>
+                <Image
+                    src={items[1].image}
+                    alt={items[1].name}
+                    fill
+                    style={{ objectFit: "cover" }}
+                />
+                <div className={s.bannerFooter}>
+                    <div>
+                        <Typography variant="h6">{items[1].type}</Typography>
+                        <Typography variant="hero-text">
+                            {items[1].name}
+                        </Typography>
+                    </div>
+                    <div>items</div>
+                </div>
+            </div>
+            <Typography
+                element="h1"
+                variant="h1"
+                style={{ marginTop: "12rem" }}
+                fontWeight="medium"
+            >
+                Oakâme, DESIGN SUSTAINABLE AND UNIQUE FURNITURE MADE IN FRANCE.
+            </Typography>
+
+            <CornerDottedDiv style={{ marginTop: "5rem" }}>
+                <Button>Our concept</Button>
+            </CornerDottedDiv>
+            <div style={{ marginBottom: "100px" }}></div>
         </div>
     );
 };

@@ -1,0 +1,71 @@
+.rowContainer {
+    display: flex;
+    flex-flow: row wrap;
+    min-width: 0;
+}
+
+.colContainer {
+    height: 100%;
+    width: 100%;
+}
+
+@for $i from 1 through 24 {
+    .col-#{$i} {
+        flex: 0 0 (100% / 24) * $i;
+        max-width: (100% / 24) * $i;
+    }
+}
+
+@media (max-width: 575px) {
+    @for $i from 1 through 24 {
+        .col-xs-#{$i} {
+            flex: 0 0 (100% / 24) * $i;
+            max-width: (100% / 24) * $i;
+        }
+    }
+}
+
+@media (min-width: 576px) {
+    @for $i from 1 through 24 {
+        .col-sm-#{$i} {
+            flex: 0 0 (100% / 24) * $i;
+            max-width: (100% / 24) * $i;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    @for $i from 1 through 24 {
+        .col-md-#{$i} {
+            flex: 0 0 (100% / 24) * $i;
+            max-width: (100% / 24) * $i;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    @for $i from 1 through 24 {
+        .col-lg-#{$i} {
+            flex: 0 0 (100% / 24) * $i;
+            max-width: (100% / 24) * $i;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    @for $i from 1 through 24 {
+        .col-xl-#{$i} {
+            flex: 0 0 (100% / 24) * $i;
+            max-width: (100% / 24) * $i;
+        }
+    }
+}
+
+@media (min-width: 1600px) {
+    @for $i from 1 through 24 {
+        .col-xxl-#{$i} {
+            flex: 0 0 (100% / 24) * $i;
+            max-width: (100% / 24) * $i;
+        }
+    }
+}
