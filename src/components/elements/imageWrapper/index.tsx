@@ -1,32 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./imageWrapper.module.scss";
 import Image from "next/image";
+import classNames from "classnames";
 
 type ImageWrapperProps = {
     src: string;
     alt: string;
-    width?: number | `${number}%`;
-    height?: number | `${number}%`;
     style?: React.CSSProperties;
     className?: string;
+    objectFit?: React.CSSProperties["objectFit"];
+    width?: React.CSSProperties["width"] | null;
+    height?: React.CSSProperties["height"] | null;
 };
 
 export const ImageWrapper = ({
     src = "",
     alt = "",
-    width = "100%",
-    height = "100%",
     style = {},
     className = "",
+    objectFit = "cover",
+    width = null,
+    height = null,
     ...props
 }: ImageWrapperProps) => {
+    const inline = { ...style };
+    if (width) inline.width = width;
+    if (height) inline.height = height;
+
     return (
-        <div className={styles.container} style={{ width, height, ...style }}>
+        <div className={classNames(styles.container, className)} style={inline}>
             <Image
                 src={src}
                 alt={alt}
-                style={{ objectFit: "cover" }}
-                className={className}
+                style={{ objectFit: objectFit }}
                 fill
                 {...props}
             />

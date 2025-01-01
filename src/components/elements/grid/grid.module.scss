@@ -16,7 +16,7 @@
     }
 }
 
-@media (max-width: 575px) {
+@media (max-width: calc(var(--screen-sm) - 1px)) {
     @for $i from 1 through 24 {
         .col-xs-#{$i} {
             flex: 0 0 (100% / 24) * $i;
@@ -25,7 +25,7 @@
     }
 }
 
-@media (min-width: 576px) {
+@media (min-width: var(--screen-sm)) {
     @for $i from 1 through 24 {
         .col-sm-#{$i} {
             flex: 0 0 (100% / 24) * $i;
@@ -34,7 +34,7 @@
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: var(--screen-md)) {
     @for $i from 1 through 24 {
         .col-md-#{$i} {
             flex: 0 0 (100% / 24) * $i;
@@ -43,7 +43,7 @@
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: var(--screen-lg)) {
     @for $i from 1 through 24 {
         .col-lg-#{$i} {
             flex: 0 0 (100% / 24) * $i;
@@ -52,7 +52,7 @@
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: var(--screen-xl)) {
     @for $i from 1 through 24 {
         .col-xl-#{$i} {
             flex: 0 0 (100% / 24) * $i;
@@ -61,7 +61,7 @@
     }
 }
 
-@media (min-width: 1600px) {
+@media (min-width: var(--screen-xxl)) {
     @for $i from 1 through 24 {
         .col-xxl-#{$i} {
             flex: 0 0 (100% / 24) * $i;

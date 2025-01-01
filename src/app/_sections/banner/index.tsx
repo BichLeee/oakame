@@ -28,7 +28,7 @@ const items = [
 
 export const Banner = () => {
     return (
-        <div className={s.container}>
+        <section className={s.container}>
             <div className={s.banner}>
                 <Image
                     src={items[1].image}
@@ -46,19 +46,21 @@ export const Banner = () => {
                     <div>items</div>
                 </div>
             </div>
-            <Typography
-                element="h1"
-                variant="h1"
-                style={{ marginTop: "12rem" }}
-                fontWeight="medium"
-            >
-                Oakâme, DESIGN SUSTAINABLE AND UNIQUE FURNITURE MADE IN FRANCE.
-            </Typography>
+            <div className={s.bottomText}>
+                <Typography
+                    element="h2"
+                    variant="h2"
+                    style={{ marginTop: "12rem" }}
+                    fontWeight="medium"
+                >
+                    Oakâme, DESIGN SUSTAINABLE AND UNIQUE FURNITURE MADE IN
+                    FRANCE.
+                </Typography>
 
-            <CornerDottedDiv style={{ marginTop: "5rem" }}>
-                <Button>Our concept</Button>
-            </CornerDottedDiv>
-            <div style={{ marginBottom: "100px" }}></div>
-        </div>
+                <CornerDottedDiv style={{ marginTop: "5rem" }}>
+                    <Button>Our concept</Button>
+                </CornerDottedDiv>
+            </div>
+        </section>
     );
 };

@@ -6,16 +6,10 @@ type RowProps = {
     children?: React.ReactNode;
     style?: React.CSSProperties;
     className?: string;
-    align?: "start" | "center" | "end";
-    justify?:
-        | "left"
-        | "center"
-        | "right"
-        | "space-between"
-        | "space-around"
-        | "space-evenly";
-    gutter?: [number, number];
-    wrap?: React.CSSProperties["flexWrap"];
+    align?: React.CSSProperties["alignContent"] | null;
+    justify?: React.CSSProperties["justifyContent"] | null;
+    gutter?: [number, number] | null;
+    wrap?: React.CSSProperties["flexWrap"] | null;
 };
 
 type ColProps = {
@@ -34,19 +28,22 @@ type ColProps = {
 export const Row = ({
     children = null,
     className = "",
-    align = "start",
-    justify = "left",
+    align = null,
+    justify = null,
     style = {},
-    gutter = [0, 0],
-    wrap = "wrap",
+    gutter = null,
+    wrap = null,
     ...props
 }: RowProps) => {
     const inline = { ...style };
-    inline.flexWrap = wrap;
-    inline.gap = gutter[0];
-    inline.rowGap = gutter[1];
-    inline.alignItems = align;
-    inline.justifyContent = justify;
+
+    if (wrap) inline.flexWrap = wrap;
+    if (gutter) {
+        inline.gap = gutter[0];
+        inline.rowGap = gutter[1];
+    }
+    if (align) inline.alignItems = align;
+    if (justify) inline.justifyContent = justify;
 
     return (
         <div

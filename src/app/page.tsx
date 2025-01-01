@@ -5,16 +5,17 @@ import { ListProducts } from "./_sections/listProducts";
 import { HighlightKeyword } from "./_sections/highlightKeyword";
 import { History } from "./_sections/history";
 import { ListCategories } from "./_sections/listCategories";
+import { Flex } from "@/components/elements";
 
 export default function Home() {
     return (
-        <section className={styles.container}>
+        <Flex vertical={true} gap={"4rem"} className={styles.container}>
             <Banner />
             <Introduction />
             <ListProducts />
             <HighlightKeyword />
             <History />
             <ListCategories />
-        </section>
+        </Flex>
     );
 }

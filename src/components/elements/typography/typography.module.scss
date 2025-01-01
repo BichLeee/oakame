@@ -1,14 +1,21 @@
 .oakame-h1 {
     color: var(--color-black);
     font-size: 6rem;
-    line-height: 110%;
+    line-height: 120%;
+    text-transform: uppercase;
+}
+
+.oakame-h2 {
+    color: var(--color-black);
+    font-size: 4.5rem;
+    line-height: 120%;
     text-transform: uppercase;
 }
 
 .oakame-h4 {
     color: var(--color-black);
     font-size: 2rem;
-    line-height: 110%;
+    line-height: 120%;
     text-transform: uppercase;
 }
 
@@ -30,14 +37,14 @@
 .oakame-h7 {
     color: var(--color-black);
     font-size: 1.2rem;
-    line-height: 110%;
+    line-height: 120%;
     font-weight: 500;
 }
 
 .oakame-hero-text {
     color: var(--color-black);
-    font-size: 12rem;
-    line-height: 110%;
+    font-size: 10rem;
+    line-height: 120%;
     font-weight: 700;
     text-transform: uppercase;
     margin-left: -0.6rem;
@@ -54,4 +61,25 @@
 
 .fw-bold {
     font-weight: 700;
+}
+
+@media (max-width: 992px) {
+    .oakame-hero-text {
+        font-size: 6rem;
+        margin-left: -0.3rem;
+    }
+    .oakame-h1 {
+        font-size: 2.5rem;
+    }
+    .oakame-h2 {
+        font-size: 2.3rem;
+        line-height: 120%;
+    }
+}
+
+@media (max-width: 768px) {
+    .oakame-hero-text {
+        font-size: 4rem;
+        margin-left: -0.3rem;
+    }
 }

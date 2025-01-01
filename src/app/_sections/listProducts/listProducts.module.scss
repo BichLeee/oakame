@@ -4,3 +4,8 @@
     border: 0.8px solid var(--color-black);
     margin-block: 20px;
 }
+
+.productWrapper {
+    width: 50%;
+    height: calc((50vw - var(--padding-container, 0px)) * (443 / 628));
+}

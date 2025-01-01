@@ -7,16 +7,10 @@ type FlexProps = {
     style?: React.CSSProperties;
     className?: string;
     vertical?: boolean;
-    align?: "start" | "center" | "end";
-    justify?:
-        | "left"
-        | "center"
-        | "right"
-        | "space-between"
-        | "space-around"
-        | "space-evenly";
-    wrap?: boolean;
-    gap?: number;
+    align?: React.CSSProperties["alignContent"] | null;
+    justify?: React.CSSProperties["justifyContent"] | null;
+    wrap?: React.CSSProperties["flexWrap"] | null;
+    gap?: React.CSSProperties["gap"] | null;
 };
 
 export const Flex = ({
@@ -24,18 +18,18 @@ export const Flex = ({
     className = "",
     style = {},
     vertical = false,
-    align = "start",
-    justify = "left",
-    wrap = true,
+    align = null,
+    justify = null,
+    wrap = null,
     gap = 0,
     ...props
 }: FlexProps) => {
     const inline = { ...style };
     if (vertical) inline.flexDirection = "column";
-    if (!wrap) inline.flexWrap = "nowrap";
+    if (wrap) inline.flexWrap = "nowrap";
     if (gap) inline.gap = gap;
-    inline.alignItems = align;
-    inline.justifyContent = justify;
+    if (align) inline.alignItems = align;
+    if (justify) inline.justifyContent = justify;
 
     return (
         <div

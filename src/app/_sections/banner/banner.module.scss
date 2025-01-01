@@ -16,5 +16,23 @@
     bottom: 0;
     display: flex;
     justify-content: space-between;
-    padding-inline: 20px;
+    padding: var(--padding-container);
+}
+
+@media (max-width: 992px) {
+    .container {
+        margin-bottom: 6rem;
+        padding: 0;
+    }
+    .banner {
+        border: 0px;
+        max-height: calc(100vw * 20 / 25);
+    }
+    .bannerFooter {
+        top: 100%;
+        bottom: auto;
+    }
+    .bottomText {
+        padding: var(--padding-container);
+    }
 }
