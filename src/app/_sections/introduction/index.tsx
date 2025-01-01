@@ -1,4 +1,4 @@
-import { Typography, Flex, Row, Col, ImageWrapper } from "components/elements";
+import { Typography, Flex, ImageWrapper } from "components/elements";
 import s from "./introduction.module.scss";
 
 import OakTree from "assets/images/oak-tree.png";
