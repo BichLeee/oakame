@@ -14,7 +14,7 @@ type TypographyProps = {
 };
 
 export const Typography = ({
-    variant = "h7",
+    variant = "body1",
     style = {},
     color = "",
     fontWeight = "regular",

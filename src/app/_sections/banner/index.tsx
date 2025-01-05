@@ -57,8 +57,8 @@ export const Banner = () => {
                     FRANCE.
                 </Typography>
 
-                <CornerDottedDiv style={{ marginTop: "5rem" }}>
-                    <Button>Our concept</Button>
+                <CornerDottedDiv style={{ marginTop: "5rem" }} hover>
+                    <Button style={{ fontSize: "1.2rem" }}>Our concept</Button>
                 </CornerDottedDiv>
             </div>
         </section>

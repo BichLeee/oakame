@@ -1,4 +1,100 @@
 .container {
-    height: 100%;
+    position: relative;
     width: 100%;
+
+    &:hover {
+        .productImg {
+            cursor: pointer;
+            border: 1px solid var(--color-black);
+            transition-property: border;
+        }
+
+        img {
+            transform: scale(105%);
+        }
+
+        .productName {
+            transform: translateY(100%);
+        }
+
+        .detailContentTop,
+        .detailContentBottom {
+            transform: translateY(0);
+        }
+    }
+}
+
+.productName {
+    transition: 0.6s;
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    transition-delay: 50ms;
+}
+
+.productImg {
+    border: 1px solid transparent;
+    transition-duration: 0.15s;
+    position: relative;
+
+    img {
+        transform: scale(110%);
+        transition: ease-in-out 0.5s;
+        transition-property: transform;
+    }
+}
+
+.detailTopWrapper {
+    position: absolute;
+    bottom: 0px;
+    left: -1px;
+    height: 40px;
+    width: 280px;
+    overflow: hidden;
+}
+
+.detailBottomWrapper {
+    position: absolute;
+    bottom: -81px;
+    left: -1px;
+    height: 80px;
+    width: 280px;
+    overflow: hidden;
+}
+
+.detailContentTop {
+    background: var(--color-white);
+    border-inline: 1px solid var(--color-black);
+    border-top: 1px solid var(--color-black);
+    display: flex;
+    flex-flow: row nowrap;
+    transform: translateY(50px);
+    transition: 0.6s;
+    width: 100%;
+    height: 100%;
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    transition-delay: 0.1s;
+}
+
+.detailContentBottom {
+    background: var(--color-white);
+    border-inline: 1px solid var(--color-black);
+    border-bottom: 1px solid var(--color-black);
+    transform: translateY(-100px);
+    transition: 0.6s;
+    width: 100%;
+    height: 100%;
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    transition-delay: 0.1s;
+    padding: 0.4rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+
+.discover {
+    color: var(--color-white);
+    background: var(--color-black);
+    display: flex;
+    align-items: center;
+    padding-inline: 20px;
 }

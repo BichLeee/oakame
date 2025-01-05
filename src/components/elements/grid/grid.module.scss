@@ -2,6 +2,7 @@
     display: flex;
     flex-flow: row wrap;
     min-width: 0;
+    flex: 1;
 }
 
 .colContainer {
@@ -9,63 +10,63 @@
     width: 100%;
 }
 
-@for $i from 1 through 24 {
+@for $i from 0 through 24 {
     .col-#{$i} {
-        flex: 0 0 (100% / 24) * $i;
-        max-width: (100% / 24) * $i;
+        flex: 0 0 #{(100% / 24) * $i};
+        max-width: #{(100% / 24) * $i};
     }
 }
 
-@media (max-width: calc(var(--screen-sm) - 1px)) {
-    @for $i from 1 through 24 {
+@media (max-width: 576px) {
+    @for $i from 0 through 24 {
         .col-xs-#{$i} {
-            flex: 0 0 (100% / 24) * $i;
-            max-width: (100% / 24) * $i;
+            flex: 0 0 #{(100% / 24) * $i};
+            max-width: #{(100% / 24) * $i};
         }
     }
 }
 
-@media (min-width: var(--screen-sm)) {
-    @for $i from 1 through 24 {
+@media (min-width: 576px) {
+    @for $i from 0 through 24 {
         .col-sm-#{$i} {
-            flex: 0 0 (100% / 24) * $i;
-            max-width: (100% / 24) * $i;
+            flex: 0 0 #{(100% / 24) * $i};
+            max-width: #{(100% / 24) * $i};
         }
     }
 }
 
-@media (min-width: var(--screen-md)) {
-    @for $i from 1 through 24 {
+@media (min-width: 768px) {
+    @for $i from 0 through 24 {
         .col-md-#{$i} {
-            flex: 0 0 (100% / 24) * $i;
-            max-width: (100% / 24) * $i;
+            flex: 0 0 #{(100% / 24) * $i};
+            max-width: #{(100% / 24) * $i};
         }
     }
 }
 
-@media (min-width: var(--screen-lg)) {
-    @for $i from 1 through 24 {
+@media (min-width: 992px) {
+    @for $i from 0 through 24 {
         .col-lg-#{$i} {
-            flex: 0 0 (100% / 24) * $i;
-            max-width: (100% / 24) * $i;
+            flex: 0 0 #{(100% / 24) * $i};
+            max-width: #{(100% / 24) * $i};
         }
     }
 }
 
-@media (min-width: var(--screen-xl)) {
-    @for $i from 1 through 24 {
+@media (min-width: 1200px) {
+    @for $i from 0 through 24 {
         .col-xl-#{$i} {
-            flex: 0 0 (100% / 24) * $i;
-            max-width: (100% / 24) * $i;
+            flex: 0 0 #{(100% / 24) * $i};
+            max-width: #{(100% / 24) * $i};
         }
     }
 }
 
-@media (min-width: var(--screen-xxl)) {
-    @for $i from 1 through 24 {
+@media (min-width: 1600px) {
+    @for $i from 0 through 24 {
         .col-xxl-#{$i} {
-            flex: 0 0 (100% / 24) * $i;
-            max-width: (100% / 24) * $i;
+            flex: 0 0 #{(100% / 24) * $i};
+            max-width: #{(100% / 24) * $i};
         }
     }
 }

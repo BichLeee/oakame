@@ -1,11 +1,48 @@
 .container {
-    height: 500px;
-    padding: var(--padding-container);
-    border: 0.8px solid var(--color-black);
-    margin-block: 20px;
+    padding-inline: var(--padding-container);
+    margin-block: 15rem;
+    position: relative;
 }
 
 .productWrapper {
+    width: 100%;
+}
+
+.header {
+    position: absolute;
+    right: 0;
+    top: 0;
     width: 50%;
-    height: calc((50vw - var(--padding-container, 0px)) * (443 / 628));
+    text-align: right;
+    padding-right: var(--padding-container);
+}
+.hiddenCol {
+    display: none;
+}
+
+.buttonCol {
+    order: -1;
+    height: 100%;
+    display: flex;
+    padding-bottom: 4.4rem;
+}
+
+@media (max-width: 1200px) and (min-width: 768px) {
+    .hiddenCol {
+        display: block;
+    }
+}
+
+@media (max-width: 1200px) {
+    .buttonCol {
+        order: 0;
+        justify-content: end;
+    }
+}
+
+@media (max-width: 767px) {
+    .header {
+        top: -10rem;
+        width: 100%;
+    }
 }

@@ -14,14 +14,14 @@
         width: 0.4rem;
         height: 0.4rem;
         bottom: 0.4rem;
-        left: calc(50% - 2px);
+        left: calc(50% - 0.2rem);
         z-index: 1;
         background: var(--color-black);
     }
 }
 
 .content {
-    height: 100vh;
+    height: min(100vh, 700px);
     margin-top: 4rem;
 }
 
@@ -31,20 +31,14 @@
     height: 100%;
 }
 
-.parapraph {
-    margin-bottom: 14rem;
-}
-
-.customFlex {
-}
-
 .customImg {
     width: 100%;
 }
 
 @media (max-width: 1024px) {
-    .parapraph {
-        margin-bottom: 5rem;
+    .parapraph [class^="typography_"] {
+        width: 100%;
+        padding-right: 10;
     }
 }
 
@@ -59,14 +53,18 @@
         flex: 1;
     }
     .content {
-        height: 150vh;
-        gap: 4rem;
+        height: 100%;
+        gap: 2rem;
     }
     .header::before {
         left: 0px;
         top: 1.4em;
     }
-    .customImg > img {
+    .customImg {
         //object-fit: contain !important;
+        height: 550px !important;
+    }
+    .parapraph {
+        margin-bottom: 2rem;
     }
 }

@@ -4,10 +4,10 @@
     position: relative;
 
     &:hover {
-        .dotTopLeft,
-        .dotTopRight,
-        .dotBottomLeft,
-        .dotBottomRight {
+        .hover.dotTopLeft,
+        .hover.dotTopRight,
+        .hover.dotBottomLeft,
+        .hover.dotBottomRight {
             background-color: var(--color-white);
         }
     }
@@ -18,32 +18,37 @@
 .dotBottomLeft,
 .dotBottomRight {
     position: absolute;
-    width: 4px;
-    height: 4px;
+    width: 0.4rem;
+    height: 0.4rem;
+    margin: 0;
+    padding: 0;
     content: "";
     background-color: var(--color-black);
     z-index: 1;
+}
+
+.hover {
     transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
     transition-duration: 0.3s;
     transition-property: background-color;
 }
 
 .dotTopLeft {
-    top: 8px;
-    left: 8px;
+    top: 0.8rem;
+    left: 0.8rem;
 }
 
 .dotTopRight {
-    top: 8px;
-    right: 8px;
+    top: 0.8rem;
+    right: 0.8rem;
 }
 
 .dotBottomLeft {
-    bottom: 8px;
-    left: 8px;
+    bottom: 0.8rem;
+    left: 0.8rem;
 }
 
 .dotBottomRight {
-    bottom: 8px;
-    right: 8px;
+    bottom: 0.8rem;
+    right: 0.8rem;
 }

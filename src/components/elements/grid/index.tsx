@@ -83,7 +83,7 @@ export const Col = ({
     const classes = classNames(
         styles.colContainer,
         span && styles["col-" + span],
-        xxl && styles["col-xxl" + xxl],
+        xxl && styles["col-xxl-" + xxl],
         xl && styles["col-xl-" + xl],
         lg && styles["col-lg-" + lg],
         md && styles["col-md-" + md],

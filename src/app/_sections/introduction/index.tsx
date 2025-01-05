@@ -35,13 +35,9 @@ export const Introduction = () => {
                             to come.
                         </Typography>
                     </div>
-                    <Flex style={{ flex: 1 }} gap={10}>
+                    <Flex style={{ height: 500 }} gap={10}>
                         <div className={classNames(s.contentLeft)}>
-                            <ImageWrapper
-                                src={OakTree.src}
-                                alt="oak tree"
-                                className={s.customImg}
-                            />
+                            <ImageWrapper src={OakTree.src} alt="oak tree" />
                         </div>
                         <Flex
                             align="end"
