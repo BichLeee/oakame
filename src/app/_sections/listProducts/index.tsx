@@ -59,7 +59,7 @@ export const ListProducts = () => {
                 </Col>
                 <Col sm={24} md={12} xl={6} className={s.buttonCol}>
                     <CornerDottedDiv style={{ marginTop: "5rem" }} hover>
-                        <Button style={{ fontSize: "1.2rem" }}>
+                        <Button size="large" style={{ fontSize: "1.2rem" }}>
                             tous nos produits
                         </Button>
                     </CornerDottedDiv>
