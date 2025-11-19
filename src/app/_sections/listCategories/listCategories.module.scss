@@ -1,6 +1,38 @@
 .container {
-    height: 500px;
     padding: var(--padding-container);
-    border: 0.8px solid var(--color-black);
     margin-block: 20px;
+}
+
+.imageWrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.furnitureImage {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideUp {
+    from {
+        top: 100%;
+    }
+    to {
+        top: 0;
+    }
+}
+
+.imageWrapper:nth-child(1) .furnitureImage {
+    animation-delay: 0s;
+}
+.imageWrapper:nth-child(2) .furnitureImage {
+    animation-delay: 0.1s;
+}
+.imageWrapper:nth-child(3) .furnitureImage {
+    animation-delay: 0.2s;
+}
+.imageWrapper:nth-child(4) .furnitureImage {
+    animation-delay: 0.3s;
 }

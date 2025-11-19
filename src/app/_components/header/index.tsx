@@ -14,7 +14,7 @@ export const Header = () => {
                 </div>
 
                 <div className={styles.dropdownWrapper}>
-                    <Button className={styles.borderRight} size="auto">
+                    <Button style={{ border: "none" }} size="auto">
                         Product
                     </Button>
                     <Button

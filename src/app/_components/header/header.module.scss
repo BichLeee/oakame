@@ -61,11 +61,11 @@
 }
 
 .borderLeft {
-    border: none;
-    border-left: 1px solid var(--color-black);
+    border: none !important;
+    border-left: 1px solid var(--color-black) !important;
 }
 
 .borderRight {
-    border: none;
-    border-right: 1px solid var(--color-black);
+    border: none !important;
+    border-right: 1px solid var(--color-black) !important;
 }

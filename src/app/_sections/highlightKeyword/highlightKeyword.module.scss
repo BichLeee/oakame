@@ -1,6 +1,112 @@
 .container {
-    height: 500px;
-    padding: var(--padding-container);
-    border: 0.8px solid var(--color-black);
-    margin-block: 20px;
+    margin: var(--padding-container);
+    border: 1px solid var(--color-black);
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.descriptionContainer {
+    padding: 5rem;
+}
+
+.aboutUs {
+    width: 100% !important;
+    height: 50px !important;
+}
+
+.textButton {
+    opacity: 0.1;
+    cursor: pointer;
+    width: fit-content;
+    transition: opacity 0.3s;
+
+    &.active,
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.contentLeft {
+    width: 60%;
+    border-right: 1px solid var(--color-black);
+}
+
+.contentRight {
+    width: 40%;
+    position: relative;
+    overflow: hidden;
+}
+
+.marqueContainer {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.marquee {
+    animation: marquee 8.45s linear infinite;
+    padding-left: 40px;
+    text-wrap: nowrap;
+}
+
+@keyframes marquee {
+    to {
+        transform: translateX(-99%);
+    }
+}
+
+.highlightImg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -2;
+
+    &.active {
+        animation: imageChange 1s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 0;
+    }
+}
+
+.blurDiv {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    background: rgb(32, 32, 32);
+    opacity: 50%;
+}
+
+@keyframes imageChange {
+    from {
+        transform: translateX(100%) scale(130%);
+    }
+    to {
+        transform: translateX(0%) scale(100%);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column-reverse;
+    }
+
+    .descriptionContainer {
+        padding: 3rem 1rem;
+        flex-direction: column !important;
+    }
+
+    .keywords {
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .contentLeft {
+        border-right: none;
+        width: 100%;
+    }
+
+    .contentRight {
+        height: 300px;
+        width: 100%;
+    }
 }

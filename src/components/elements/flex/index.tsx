@@ -1,6 +1,7 @@
 import React from "react";
-import styles from "./flex.module.scss";
 import classNames from "classnames";
+
+import styles from "./flex.module.scss";
 
 type FlexProps = {
     children?: React.ReactNode;

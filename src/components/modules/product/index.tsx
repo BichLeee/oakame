@@ -15,7 +15,7 @@ export const Product = ({ ...props }) => {
                     src={img.src}
                     alt="bocuse table"
                     width="100%"
-                    style={{ aspectRatio: 5 / 4 }}
+                    ratio={5 / 4}
                 />
                 <Flex className={s.detailTopWrapper}>
                     <CornerDottedDiv

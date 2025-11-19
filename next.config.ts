@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+    images: {
+        domains: ["localhost"],
+    },
     webpack(config, { isServer }) {
         // Modify Webpack to handle SVG files
         config.module.rules.push({

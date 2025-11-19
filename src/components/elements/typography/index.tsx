@@ -7,9 +7,10 @@ type TypographyProps = {
     variant?: string;
     style?: React.CSSProperties;
     color?: React.CSSProperties["color"];
-    fontWeight?: "regular" | "medium" | "bold";
+    fontWeight?: React.CSSProperties["fontWeight"];
     children?: React.ReactNode;
     className?: string;
+    transform?: React.CSSProperties["textTransform"] | null;
     element?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div" | "span" | "p";
 };
 
@@ -21,23 +22,18 @@ export const Typography = ({
     children = null,
     className = "",
     element = "div",
+    transform = "none",
     ...props
 }: TypographyProps) => {
     const Component = element;
     const inline = { ...style };
 
     if (color) inline.color = color;
+    if (fontWeight) inline.fontWeight = fontWeight;
+    if (transform) inline.textTransform = transform;
 
     return (
-        <Component
-            className={classNames(
-                s["oakame-" + variant],
-                s["fw-" + fontWeight],
-                className,
-            )}
-            style={inline}
-            {...props}
-        >
+        <Component className={classNames(s["oakame-" + variant], className)} style={inline} {...props}>
             {children}
         </Component>
     );
