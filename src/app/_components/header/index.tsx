@@ -14,16 +14,10 @@ export const Header = () => {
                 </div>
 
                 <div className={styles.dropdownWrapper}>
-                    <Button style={{ border: "none" }} size="auto">
+                    <Button style={{ border: "none" }} size="auto" className={styles.productBtn}>
                         Product
                     </Button>
-                    <Button
-                        className={classNames(
-                            styles.borderRight,
-                            styles.menuMobile,
-                        )}
-                        size="auto"
-                    >
+                    <Button className={classNames(styles.borderRight, styles.menuMobile)} size="auto">
                         Menu
                     </Button>
                 </div>

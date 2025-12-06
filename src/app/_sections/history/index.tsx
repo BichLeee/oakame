@@ -1,11 +1,6 @@
 import { Typography } from "components/elements/typography";
 import s from "./history.module.scss";
-import {
-    Button,
-    CornerDottedDiv,
-    Flex,
-    ImageWrapper,
-} from "@/components/elements";
+import { Button, CornerDottedDiv, Flex, ImageWrapper } from "@/components/elements";
 
 import paymentImg from "assets/images/payment.jpg";
 import { Collapse } from "@/components/modules";
@@ -31,39 +26,31 @@ const collapseItems = [
 export const History = () => {
     return (
         <section className={s.container}>
-            <Typography variant="hero-text">The history</Typography>
-            <Typography
-                variant="hero-text"
-                style={{ display: "flex", justifyContent: "space-between" }}
-            >
-                <span>of </span>
-                <span>your</span>
-            </Typography>
-            <Typography variant="hero-text" style={{ textAlign: "right" }}>
-                furniture
-            </Typography>
-            <Flex
-                style={{ marginTop: "5rem" }}
-                justify="space-between"
-                align="end"
-            >
+            <div className={s.title}>
+                <Typography variant="hero-text">The history</Typography>
+                <Typography variant="hero-text" style={{ display: "flex", justifyContent: "space-between" }}>
+                    <span>of </span>
+                    <span>your</span>
+                </Typography>
+                <Typography variant="hero-text" style={{ textAlign: "right" }}>
+                    furniture
+                </Typography>
+            </div>
+            <div className={s.titleMobile}>
+                <Typography element="h2" variant="hero-text" style={{ marginTop: "12rem" }} fontWeight="medium">
+                    THE HISTORY OF YOUR FUTURE
+                </Typography>
+            </div>
+            <Flex style={{ marginTop: "5rem" }} justify="space-between" align="end" className={s.content}>
                 <div className={s.contentLeft}>
-                    <ImageWrapper
-                        src={paymentImg.src}
-                        alt="payment"
-                        width="100%"
-                        height="auto"
-                        ratio={2 / 1}
-                    />
+                    <ImageWrapper src={paymentImg.src} alt="payment" width="100%" height="auto" ratio={2 / 1} />
                     <Typography variant="h5" style={{ marginTop: "5rem" }}>
-                        We pay tribute to the history of each oak beam that
-                        makes up your Oakâme furniture. Discover their past
-                        thanks to NFC technology.
+                        We pay tribute to the history of each oak beam that makes up your Oakâme furniture. Discover
+                        their past thanks to NFC technology.
                     </Typography>
                     <div style={{ width: "min-content", marginTop: "2rem" }}>
                         <Typography fontWeight={300}>
-                            Be captivated by our design furniture that blends
-                            innovation and heritage.
+                            Be captivated by our design furniture that blends innovation and heritage.
                         </Typography>
                         <CornerDottedDiv hover style={{ marginTop: "5rem" }}>
                             <Button size="large">MORE QUESTION</Button>

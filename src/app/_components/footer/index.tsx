@@ -1,5 +1,5 @@
 import { Button, Col, CornerDottedDiv, Flex, Row, Typography } from "@/components/elements";
-import styles from "./footer.module.scss";
+import s from "./footer.module.scss";
 import { IconOakameAlt2 } from "@/components/SVGs";
 import Link from "next/link";
 
@@ -13,10 +13,10 @@ const contactLink = [
 export const Footer = () => {
     return (
         <footer>
-            <Row className={styles.container}>
-                <Col xs={3} className={styles.sideCol}>
+            <Row className={s.container}>
+                <Col xs={3} className={s.sideCol}>
                     <CornerDottedDiv
-                        className={styles.dottedDiv}
+                        className={s.dottedDiv}
                         bottomLeft={false}
                         style={{
                             width: "100%",
@@ -29,13 +29,13 @@ export const Footer = () => {
                         </Typography>
                     </CornerDottedDiv>
                 </Col>
-                <Col xs={18}>
+                <Col xs={24} md={18}>
                     <CornerDottedDiv
                         style={{
                             paddingBlock: 35,
                             width: "100%",
                         }}
-                        className={styles.dottedDiv}
+                        className={s.dottedDiv}
                     >
                         <Flex vertical align="center" justify="center" gap={25}>
                             <IconOakameAlt2 width={44} />
@@ -49,7 +49,7 @@ export const Footer = () => {
                                             variant="body2"
                                             transform="uppercase"
                                             fontWeight={400}
-                                            className={styles.socialLink}
+                                            className={s.socialLink}
                                         >
                                             {l.label}
                                             {idx < contactLink.length - 1 ? "," : ""}
@@ -100,17 +100,30 @@ export const Footer = () => {
                             </Button>
                         </Col>
                     </Row>
+                    <Row style={{ borderTop: "1px solid var(--color-black)" }} className={s.additionalInfo}>
+                        <Flex justify="center" style={{ paddingBlock: 20 }}>
+                            <Flex vertical style={{ width: "50%" }} gap={28}>
+                                <Typography variant="body5" transform="uppercase" fontWeight={400}>
+                                    Oakâme receives financial support from the Région Hauts-de-France Region
+                                </Typography>
+                                <Typography variant="body2" transform="uppercase" fontWeight={400}>
+                                    © 2024 Oakâme
+                                    <br /> All rights reserved
+                                </Typography>
+                            </Flex>
+                        </Flex>
+                    </Row>
                     <Row style={{ borderTop: "1px solid var(--color-black)" }}>
                         <Flex style={{ overflow: "hidden" }} justify="center">
-                            <div className={styles.bigText}>OAKÂME</div>
+                            <div className={s.bigText}>OAKÂME</div>
                         </Flex>
                     </Row>
                 </Col>
-                <Col xs={3} className={styles.sideCol}>
+                <Col xs={3} className={s.sideCol}>
                     <Flex vertical style={{ height: "100%", textAlign: "right" }}>
                         <CornerDottedDiv
                             style={{ flex: "1", width: "100%" }}
-                            className={styles.dottedDiv}
+                            className={s.dottedDiv}
                             bottomRight={false}
                         >
                             <div style={{ width: "100%" }}>
@@ -127,7 +140,7 @@ export const Footer = () => {
                                 borderTop: "1px solid var(--color-black)",
                                 width: "100%",
                             }}
-                            className={styles.dottedDiv}
+                            className={s.dottedDiv}
                         >
                             <Typography variant="body2" transform="uppercase" fontWeight={400}>
                                 © 2024 Oakâme All rights reserved

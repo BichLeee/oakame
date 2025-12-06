@@ -30,3 +30,20 @@
         opacity: 0.2;
     }
 }
+
+.additionalInfo {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .sideCol {
+        display: none;
+    }
+    .additionalInfo {
+        display: block;
+    }
+    .bigText {
+        font-size: 8.4rem;
+        transform: translateY(24%);
+    }
+}

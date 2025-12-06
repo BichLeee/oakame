@@ -64,45 +64,66 @@ export const ListCategories = () => {
     return (
         <section className={s.container}>
             <Typography>Our categories</Typography>
-            <Typography
-                variant="h1"
-                fontWeight={700}
-                style={{
-                    display: "flex",
-                    flexWrap: "wrap",
-                    width: "80%",
-                }}
-            >
+            <div className={s.content}>
+                <Typography
+                    variant="h1"
+                    fontWeight={700}
+                    transform="uppercase"
+                    style={{
+                        display: "flex",
+                        flexWrap: "wrap",
+                        width: "80%",
+                    }}
+                >
+                    {categoryList.map((c, index) => (
+                        <span
+                            key={index}
+                            style={{
+                                textWrap: "nowrap",
+                                cursor: "pointer",
+                                opacity: hover >= 0 && hover !== index ? 0.1 : 1,
+                                paddingLeft: "1.5rem",
+                            }}
+                            onMouseEnter={() => setHover(index)}
+                            onMouseLeave={() => setHover(-1)}
+                        >
+                            {c.label}
+                            {index < categoryList.length - 1 ? ", " : ""}
+                        </span>
+                    ))}
+                </Typography>
+                <Row style={{ height: 200, marginTop: "1rem" }} gutter={[8, 8]} wrap="nowrap">
+                    {hover >= 0
+                        ? categoryList[hover].images.map((i) => (
+                              <Col xs={6} key={i} className={s.imageWrapper}>
+                                  <ImageWrapper src={i} alt="furniture" ratio={2 / 3} className={s.furnitureImage} />
+                              </Col>
+                          ))
+                        : defaultImages.map((i) => (
+                              <Col xs={6} key={i} className={s.imageWrapper}>
+                                  <ImageWrapper src={i} alt="furniture" ratio={2 / 3} className={s.furnitureImage} />
+                              </Col>
+                          ))}
+                </Row>
+            </div>
+            <div className={s.contentMobile}>
                 {categoryList.map((c, index) => (
-                    <span
+                    <Typography
+                        variant="h1"
+                        fontWeight={700}
+                        transform="uppercase"
                         key={index}
                         style={{
-                            textWrap: "nowrap",
-                            cursor: "pointer",
-                            opacity: hover >= 0 && hover !== index ? 0.1 : 1,
-                            paddingLeft: "1.5rem",
+                            display: "flex",
+                            flexWrap: "wrap",
+                            fontSize: "3.2rem",
                         }}
-                        onMouseEnter={() => setHover(index)}
-                        onMouseLeave={() => setHover(-1)}
                     >
                         {c.label}
                         {index < categoryList.length - 1 ? ", " : ""}
-                    </span>
+                    </Typography>
                 ))}
-            </Typography>
-            <Row style={{ height: 200, marginTop: "1rem" }} gutter={[8, 8]} wrap="nowrap">
-                {hover >= 0
-                    ? categoryList[hover].images.map((i) => (
-                          <Col xs={6} key={i} className={s.imageWrapper}>
-                              <ImageWrapper src={i} alt="furniture" ratio={2 / 3} className={s.furnitureImage} />
-                          </Col>
-                      ))
-                    : defaultImages.map((i) => (
-                          <Col xs={6} key={i} className={s.imageWrapper}>
-                              <ImageWrapper src={i} alt="furniture" ratio={2 / 3} className={s.furnitureImage} />
-                          </Col>
-                      ))}
-            </Row>
+            </div>
         </section>
     );
 };

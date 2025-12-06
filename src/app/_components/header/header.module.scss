@@ -38,9 +38,16 @@
     visibility: hidden;
 }
 
+.productBtn {
+    border-right: 1px solid var(--color-black) !important;
+    max-width: 200px;
+    width: 100%;
+}
+
 @media (max-width: 768px) {
     .icon,
-    .buttonGroup {
+    .buttonGroup,
+    .productBtn {
         display: none !important;
     }
     .iconMobile {

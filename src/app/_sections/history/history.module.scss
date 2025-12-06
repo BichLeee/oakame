@@ -12,3 +12,31 @@
     padding-right: 5%;
     width: 50%;
 }
+
+.titleMobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .contentLeft,
+    .contentRight {
+        width: 100%;
+    }
+    .content {
+        flex-direction: column;
+        gap: 5rem;
+    }
+
+    .contentLeft,
+    .contentRight {
+        padding: 0;
+    }
+
+    .title {
+        display: none;
+    }
+
+    .titleMobile {
+        display: block;
+    }
+}
