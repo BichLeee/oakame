@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 import s from "./typography.module.scss";
 
-type TypographyProps = {
+type TypographyProps = React.HTMLAttributes<HTMLElement> & {
     variant?: string;
     style?: React.CSSProperties;
     color?: React.CSSProperties["color"];
@@ -12,6 +12,7 @@ type TypographyProps = {
     className?: string;
     transform?: React.CSSProperties["textTransform"] | null;
     element?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div" | "span" | "p";
+    props?: React.HTMLAttributes<HTMLElement>;
 };
 
 export const Typography = ({

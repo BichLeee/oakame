@@ -32,7 +32,7 @@
 }
 
 .additionalInfo {
-    display: none;
+    display: none !important;
 }
 
 @media (max-width: 768px) {
@@ -40,7 +40,7 @@
         display: none;
     }
     .additionalInfo {
-        display: block;
+        display: block !important;
     }
     .bigText {
         font-size: 8.4rem;

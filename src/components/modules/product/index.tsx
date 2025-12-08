@@ -1,22 +1,18 @@
 import s from "./product.module.scss";
-import {
-    CornerDottedDiv,
-    Flex,
-    ImageWrapper,
-    Typography,
-} from "components/elements";
-import img from "assets/images/products/bocuse_table.png";
+import { CornerDottedDiv, Flex, ImageWrapper, Typography } from "components/elements";
 
-export const Product = ({ ...props }) => {
+type ProductProps = {
+    image: typeof ImageWrapper.prototype.props;
+    type: string;
+    name: string;
+    price: string;
+};
+
+export const Product = ({ image, type, name, price }: ProductProps) => {
     return (
-        <div className={s.container} {...props}>
+        <div className={s.container}>
             <div className={s.productImg}>
-                <ImageWrapper
-                    src={img.src}
-                    alt="bocuse table"
-                    width="100%"
-                    ratio={5 / 4}
-                />
+                <ImageWrapper src={image.src} alt="bocuse table" width="100%" ratio={6 / 4} />
                 <Flex className={s.detailTopWrapper}>
                     <CornerDottedDiv
                         className={s.detailContentTop}
@@ -32,51 +28,31 @@ export const Product = ({ ...props }) => {
                             }}
                             align="end"
                         >
-                            <Typography variant="button" fontWeight="bold">
-                                Dinning tables
+                            <Typography variant="button" fontWeight="bold" transform="uppercase">
+                                {type}
                             </Typography>
                         </Flex>
                         <div className={s.discover}>
-                            <Typography
-                                variant="button"
-                                style={{ color: "#f6f1eb" }}
-                                fontWeight="bold"
-                            >
+                            <Typography variant="button" style={{ color: "#f6f1eb" }} fontWeight="bold">
                                 DISCOVER
                             </Typography>
                         </div>
                     </CornerDottedDiv>
                 </Flex>
                 <div className={s.detailBottomWrapper}>
-                    <CornerDottedDiv
-                        className={s.detailContentBottom}
-                        topLeft={false}
-                        bottomRight={false}
-                    >
-                        <Typography
-                            variant="h4"
-                            fontWeight="bold"
-                            style={{ textAlign: "left" }}
-                        >
-                            BOCUSE
+                    <CornerDottedDiv className={s.detailContentBottom} topLeft={false} bottomRight={false}>
+                        <Typography variant="h4" fontWeight="bold" transform="uppercase" style={{ textAlign: "left" }}>
+                            {name}
                         </Typography>
-                        <Typography
-                            variant="h4"
-                            fontWeight="bold"
-                            style={{ textAlign: "right" }}
-                        >
-                            4150$
+                        <Typography variant="h4" fontWeight="bold" style={{ textAlign: "right" }}>
+                            {price}$
                         </Typography>
                     </CornerDottedDiv>
                 </div>
             </div>
             <div style={{ overflow: "hidden", marginTop: "2rem" }}>
-                <Typography
-                    variant="h4"
-                    fontWeight="bold"
-                    className={s.productName}
-                >
-                    BOCUSE
+                <Typography variant="h4" fontWeight="bold" className={s.productName} transform="uppercase">
+                    {name}
                 </Typography>
             </div>
         </div>
