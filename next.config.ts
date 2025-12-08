@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
     images: {
         domains: ["localhost"],
     },
-    webpack(config, { isServer }) {
+    webpack(config) {
         // Modify Webpack to handle SVG files
         config.module.rules.push({
             test: /\.svg$/,
