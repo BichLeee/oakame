@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./grid.module.scss";
 import classNames from "classnames";
 
-type RowProps = {
+type RowProps = React.HTMLAttributes<HTMLElement> & {
     children?: React.ReactNode;
     style?: React.CSSProperties;
     className?: string;
@@ -12,7 +12,7 @@ type RowProps = {
     wrap?: React.CSSProperties["flexWrap"] | null;
 };
 
-type ColProps = {
+type ColProps = React.HTMLAttributes<HTMLElement> & {
     children?: React.ReactNode;
     style?: React.CSSProperties;
     className?: string;
@@ -46,11 +46,7 @@ export const Row = ({
     if (justify) inline.justifyContent = justify;
 
     return (
-        <div
-            className={classNames(styles.rowContainer, className)}
-            style={inline}
-            {...props}
-        >
+        <div className={classNames(styles.rowContainer, className)} style={inline} {...props}>
             {children}
         </div>
     );

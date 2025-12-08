@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 import styles from "./flex.module.scss";
 
-type FlexProps = {
+type FlexProps = React.HTMLAttributes<HTMLElement> & {
     children?: React.ReactNode;
     style?: React.CSSProperties;
     className?: string;
@@ -33,11 +33,7 @@ export const Flex = ({
     if (justify) inline.justifyContent = justify;
 
     return (
-        <div
-            className={classNames(styles.container, className)}
-            style={inline}
-            {...props}
-        >
+        <div className={classNames(styles.container, className)} style={inline} {...props}>
             {children}
         </div>
     );

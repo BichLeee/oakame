@@ -5,7 +5,7 @@ import s from "./collapse.module.scss";
 import { Flex, Typography } from "@/components/elements";
 import { IconArrowDown } from "@/components/SVGs";
 
-type CollapseType = {
+type CollapseType = React.HTMLAttributes<HTMLElement> & {
     items: { title: string; content: string }[];
 };
 
