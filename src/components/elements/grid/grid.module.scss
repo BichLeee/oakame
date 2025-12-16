@@ -37,7 +37,7 @@
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     @for $i from 0 through 24 {
         .col-md-#{$i} {
             flex: 0 0 #{math.div(100%, 24) * $i};

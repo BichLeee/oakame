@@ -44,6 +44,21 @@
     width: 100%;
 }
 
+.buttonGroup {
+    display: flex;
+    justify-content: right;
+}
+
+.borderLeft {
+    border: none !important;
+    border-left: 1px solid var(--color-black) !important;
+}
+
+.borderRight {
+    border: none !important;
+    border-right: 1px solid var(--color-black) !important;
+}
+
 @media (max-width: 768px) {
     .icon,
     .buttonGroup,
@@ -60,19 +75,7 @@
         grid-column: 2 / span 2;
         display: flex;
     }
-}
-
-.buttonGroup {
-    display: flex;
-    justify-content: right;
-}
-
-.borderLeft {
-    border: none !important;
-    border-left: 1px solid var(--color-black) !important;
-}
-
-.borderRight {
-    border: none !important;
-    border-right: 1px solid var(--color-black) !important;
+    .container {
+        height: 3.5rem;
+    }
 }

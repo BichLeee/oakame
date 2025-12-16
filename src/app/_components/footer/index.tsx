@@ -29,7 +29,7 @@ export const Footer = () => {
                         </Typography>
                     </CornerDottedDiv>
                 </Col>
-                <Col xs={24} md={18}>
+                <Col xs={24} sm={24} md={18}>
                     <CornerDottedDiv
                         style={{
                             paddingBlock: 35,

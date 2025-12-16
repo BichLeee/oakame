@@ -35,7 +35,7 @@ export const Banner = () => {
     useEffect(() => {
         const interval = setTimeout(() => {
             setActive((prev) => (prev === 2 ? 0 : prev + 1));
-        }, 5600);
+        }, 5000);
 
         return () => clearTimeout(interval);
     }, [active]);
@@ -47,17 +47,48 @@ export const Banner = () => {
                     <div
                         key={index}
                         className={`${s.bannerImage} ${index === active ? s.active : ""}`}
-                        style={{ zIndex: 2 - index + (index >= active ? 5 : 0) }}
+                        style={{ zIndex: active === index ? 4 : active < index ? -(3 - index) : index }}
                     >
-                        <Image src={item.image} alt={item.name} fill style={{ objectFit: "cover" }} />
+                        <div className={s.bannerImageInner}>
+                            <Image src={item.image} alt={item.name} fill style={{ objectFit: "cover" }} />
+                        </div>
                     </div>
                 ))}
                 <div className={s.bannerFooter}>
-                    <div>
-                        <Typography variant="h6" transform="uppercase" className={s.animatedText}>
+                    <div style={{ perspective: 800, overflow: "hidden" }}>
+                        <Typography
+                            variant="h6"
+                            transform="uppercase"
+                            key={`type-${active}`}
+                            className={s.animatedText}
+                        >
                             {items[active].type}
                         </Typography>
-                        <Typography variant="hero-text" transform="uppercase" className={s.animatedText}>
+                        {/* <Typography
+                            variant="hero-text"
+                            transform="uppercase"
+                            key={`name-${active}`}
+                            style={{ perspective: 800 }}
+                        >
+                            {items[active].name.split("").map((char, index) => (
+                                <span
+                                    key={index}
+                                    className={s.animatedText}
+                                    style={{
+                                        animationDelay: `${index * 0.03}s`,
+                                        animationDuration: `${0.8 - index * 0.05}s`,
+                                    }}
+                                >
+                                    {char}
+                                </span>
+                            ))}
+                        </Typography> */}
+                        <Typography
+                            variant="hero-text"
+                            transform="uppercase"
+                            key={`name-${active}`}
+                            className={s.animatedText}
+                        >
                             {items[active].name}
                         </Typography>
                     </div>
@@ -68,13 +99,7 @@ export const Banner = () => {
                                 className={`${s.thumbnail} ${index === active ? s.active : ""}`}
                                 onClick={() => setActive(index)}
                             >
-                                <Image
-                                    src={item.image}
-                                    width={124}
-                                    height={74}
-                                    alt={item.name}
-                                    style={{ objectFit: "cover" }}
-                                />
+                                <Image src={item.image} fill alt={item.name} style={{ objectFit: "cover" }} />
                             </div>
                         ))}
                     </Flex>

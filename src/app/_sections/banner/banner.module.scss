@@ -1,6 +1,7 @@
 .container {
     width: 100%;
     padding: var(--padding-container);
+    overflow: hidden;
 }
 
 .banner {
@@ -15,24 +16,57 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
+    overflow: hidden;
 
-    &.active::before {
+    &::before {
         content: "";
         position: absolute;
-        top: 0;
-        left: -100%;
+        inset: 0;
         background: #000;
-        opacity: 0.3;
+        opacity: 0.5;
         height: 100%;
         width: 100%;
         z-index: 4;
     }
 
     &.active {
-        animation: bannerSlide 0.6s forwards;
-        animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+        animation: bannerSlide 1.2s ease-out forwards;
+        transform: translateX(100%);
+
+        &::before {
+            opacity: 0;
+        }
+    }
+
+    &.active .bannerImageInner {
+        animation: bannerInnerSlide 1.2s ease-out forwards;
+    }
+}
+
+.bannerImageInner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@keyframes bannerSlide {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes bannerInnerSlide {
+    from {
+        transform: translateX(-100%) scale(1.1);
+    }
+    to {
+        transform: translateX(0%) scale(1);
     }
 }
 
@@ -73,9 +107,7 @@
 
     &.active::before {
         display: block;
-        animation: thumbnailSlide 5s forwards;
-        animation-delay: 0.6s;
-        animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+        animation: thumbnailSlide 5s linear forwards;
     }
 }
 
@@ -88,12 +120,20 @@
     }
 }
 
-@keyframes bannerSlide {
+.animatedText {
+    animation: textAnimation 0.8s var(--ease-in);
+    transform-style: preserve-3d;
+    transform-origin: center bottom;
+}
+
+@keyframes textAnimation {
     from {
-        transform: translateX(100%);
+        transform: translateY(50px) rotate3d(1, 0, 0, -90deg);
+        opacity: 0;
     }
     to {
-        transform: translateX(0%);
+        transform: translateY(0) rotate3d(0, 0, 0, 0deg);
+        opacity: 1;
     }
 }
 
@@ -120,5 +160,21 @@
     }
     .thumbnail {
         margin-bottom: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        margin-bottom: 2rem;
+    }
+    .bannerFooter {
+        top: calc(100% - 50px);
+    }
+    .thumbnail {
+        width: 54px;
+        height: 34px;
+    }
+    .bannerFooter {
+        gap: 40px;
     }
 }
