@@ -122,14 +122,13 @@
 }
 
 .animatedText {
-    animation: textAnimation 0.8s var(--ease-in);
+    animation: textAnimation 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     transform-style: preserve-3d;
-    transform-origin: center bottom;
 }
 
 @keyframes textAnimation {
     from {
-        transform: translateY(50px) rotate3d(1, 0, 0, -90deg);
+        transform: translateY(100px) rotate3d(1, 0, 0, -90deg);
         opacity: 0;
     }
     to {
